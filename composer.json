@@ -1,0 +1,28 @@
+{
+    "name": "amin3mej/perseverance",
+    "description": "The leaked source code of Perseverance's Mars rover",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Amin Djawadi",
+            "email": "djawadi@riseup.net"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Amin3mej\\Perseverance\\": ["src/"]
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Amin3mej\\Perseverance\\Test\\": ["tests/"]
+        }
+    },
+    "require": {
+        "php": ">=7.1",
+        "werkspot/enum": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    }
+}
