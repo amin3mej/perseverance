@@ -18,7 +18,7 @@ class CardinalDirection extends AbstractEnum
     const EAST  = 'E';
 
 
-    public $clockwiseOrder = [
+    public $inClockwiseOrder = [
         self::NORTH,
         self::EAST,
         self::SOUTH,
@@ -27,25 +27,20 @@ class CardinalDirection extends AbstractEnum
 
     public static function includes(CardinalDirection $direction): bool
     {
-        return in_array($direction, [
-            self::NORTH,
-            self::EAST,
-            self::SOUTH,
-            self::WEST,
-        ]);
+        return in_array($direction, $inClockwiseOrder);
     }
 
     public function getLeft(): CardinalDirection
     {
-        $newPos = (array_search($this->getValue(), $this->clockwiseOrder) + 3) % 4;
-        return self::get($this->clockwiseOrder[$newPos]);
+        $newPos = (array_search($this->getValue(), $this->inClockwiseOrder) + 3) % 4;
+        return self::get($this->inClockwiseOrder[$newPos]);
     }
 
     public function getRight(): CardinalDirection
     {
 
-        $newPos = (array_search($this->getValue(), $this->clockwiseOrder) + 5) % 4;
-        return self::get($this->clockwiseOrder[$newPos]);
+        $newPos = (array_search($this->getValue(), $this->inClockwiseOrder) + 5) % 4;
+        return self::get($this->inClockwiseOrder[$newPos]);
     }
 
     public function getImpact(): array
